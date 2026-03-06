@@ -20,9 +20,7 @@
     --font-head: 'Syne', sans-serif;
     --font-mono: 'Space Mono', monospace;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
     background: var(--bg);
     color: var(--text);
@@ -30,8 +28,6 @@
     min-height: 100vh;
     overflow-x: hidden;
   }
-
-  /* Grid BG */
   body::before {
     content: '';
     position: fixed;
@@ -43,391 +39,163 @@
     pointer-events: none;
     z-index: 0;
   }
-
   header {
-    position: relative;
-    z-index: 10;
+    position: relative; z-index: 10;
     padding: 40px 48px 32px;
     border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 24px;
-    flex-wrap: wrap;
+    display: flex; align-items: flex-end;
+    justify-content: space-between; gap: 24px; flex-wrap: wrap;
   }
-
-  header .brand {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
+  .brand { display: flex; align-items: center; gap: 14px; }
   .logo-dot {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 16px var(--accent);
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 16px var(--accent);
     animation: pulse 2s ease-in-out infinite;
   }
-
   @keyframes pulse {
-    0%, 100% { opacity: 1; box-shadow: 0 0 16px var(--accent); }
-    50% { opacity: 0.5; box-shadow: 0 0 8px var(--accent); }
+    0%,100% { opacity:1; box-shadow:0 0 16px var(--accent); }
+    50% { opacity:0.5; box-shadow:0 0 8px var(--accent); }
   }
-
-  h1 {
-    font-family: var(--font-head);
-    font-size: 28px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    color: #fff;
-  }
-
+  h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; color: #fff; }
   h1 span { color: var(--accent); }
-
-  .tagline {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
+  .tagline { font-family: var(--font-mono); font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+  .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
   .date-badge {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--accent);
-    background: rgba(0,229,160,0.07);
-    border: 1px solid rgba(0,229,160,0.2);
-    padding: 6px 14px;
-    border-radius: 4px;
-    letter-spacing: 0.06em;
+    font-family: var(--font-mono); font-size: 11px; color: var(--accent);
+    background: rgba(0,229,160,0.07); border: 1px solid rgba(0,229,160,0.2);
+    padding: 6px 14px; border-radius: 4px; letter-spacing: 0.06em;
   }
-
-  /* Filter bar */
+  .update-time { font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
   .controls {
-    position: relative;
-    z-index: 10;
-    padding: 20px 48px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    position: relative; z-index: 10; padding: 20px 48px;
+    display: flex; gap: 10px; flex-wrap: wrap;
     border-bottom: 1px solid var(--border);
   }
-
   .filter-btn {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    padding: 8px 16px;
-    border-radius: 4px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.15s;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    font-family: var(--font-mono); font-size: 11px;
+    padding: 8px 16px; border-radius: 4px;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--muted); cursor: pointer; transition: all 0.15s;
+    letter-spacing: 0.05em; text-transform: uppercase;
   }
-
   .filter-btn:hover, .filter-btn.active {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--accent); color: var(--accent);
     background: rgba(0,229,160,0.06);
   }
-
-  /* Legend */
   .legend {
-    position: relative;
-    z-index: 10;
-    padding: 16px 48px;
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
+    position: relative; z-index: 10; padding: 16px 48px;
+    display: flex; gap: 24px; flex-wrap: wrap;
     border-bottom: 1px solid var(--border);
   }
-
   .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); font-size: 10px;
+    color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase;
   }
-
-  .legend-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-  }
-
-  /* Main grid */
-  .main {
-    position: relative;
-    z-index: 10;
-    padding: 40px 48px;
-  }
-
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .main { position: relative; z-index: 10; padding: 40px 48px; }
   .sector-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 16px;
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 16px; margin-top: 40px;
+    display: flex; align-items: center; gap: 12px;
   }
-
   .sector-label:first-child { margin-top: 0; }
-
-  .sector-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-
+  .sector-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
   .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 16px;
-    margin-bottom: 8px;
+    gap: 16px; margin-bottom: 8px;
   }
-
   .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 22px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.2s;
-    cursor: default;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 22px;
+    position: relative; overflow: hidden;
+    transition: all 0.2s; cursor: default;
   }
-
   .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
   }
-
   .card.sector-chips::before { background: var(--accent4); }
   .card.sector-biotech::before { background: var(--accent); }
   .card.sector-minerals::before { background: var(--accent2); }
   .card.sector-defense::before { background: var(--accent3); }
-
   .card:hover {
     border-color: rgba(255,255,255,0.12);
     transform: translateY(-2px);
     box-shadow: 0 12px 40px rgba(0,0,0,0.4);
   }
-
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 14px;
-    gap: 12px;
+  .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; gap: 12px; }
+  .ticker { font-family: var(--font-mono); font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
+  .company-name { font-size: 11px; color: var(--muted); margin-top: 3px; font-weight: 400; }
+  .price-block { text-align: right; }
+  .price { font-family: var(--font-mono); font-size: 18px; font-weight: 700; color: #fff; }
+  .price-change { font-family: var(--font-mono); font-size: 11px; margin-top: 2px; }
+  .price-change.up { color: #00e5a0; }
+  .price-change.down { color: #e05c5c; }
+  .price-change.flat { color: var(--muted); }
+  .week52 { font-family: var(--font-mono); font-size: 9px; color: var(--muted); margin-top: 3px; letter-spacing: 0.03em; }
+  /* 52-week position bar */
+  .position-bar-wrap { margin-bottom: 14px; }
+  .position-bar-label { font-family: var(--font-mono); font-size: 9px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 5px; }
+  .position-bar-track { position: relative; height: 4px; background: var(--border); border-radius: 2px; }
+  .position-bar-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--accent3), var(--accent2), var(--accent)); }
+  .position-marker {
+    position: absolute; top: 50%; transform: translate(-50%, -50%);
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #fff; border: 2px solid var(--accent);
+    box-shadow: 0 0 6px var(--accent);
   }
-
-  .ticker-block {}
-
-  .ticker {
-    font-family: var(--font-mono);
-    font-size: 20px;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: -0.02em;
-  }
-
-  .company-name {
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 3px;
-    font-weight: 400;
-  }
-
-  .price-block {
-    text-align: right;
-  }
-
-  .price {
-    font-family: var(--font-mono);
-    font-size: 18px;
-    font-weight: 700;
-    color: #fff;
-  }
-
-  .price-range {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    color: var(--muted);
-    margin-top: 3px;
-    letter-spacing: 0.03em;
-  }
-
   .catalyst-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    padding: 4px 10px;
-    border-radius: 3px;
-    margin-bottom: 12px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono); font-size: 10px;
+    padding: 4px 10px; border-radius: 3px; margin-bottom: 12px;
+    letter-spacing: 0.05em; text-transform: uppercase;
   }
-
-  .tag-hot {
-    background: rgba(229,92,92,0.1);
-    border: 1px solid rgba(229,92,92,0.3);
-    color: #e05c5c;
-  }
-
-  .tag-near {
-    background: rgba(245,166,35,0.1);
-    border: 1px solid rgba(245,166,35,0.3);
-    color: var(--accent2);
-  }
-
-  .tag-pending {
-    background: rgba(0,229,160,0.08);
-    border: 1px solid rgba(0,229,160,0.2);
-    color: var(--accent);
-  }
-
-  .tag-negotiating {
-    background: rgba(92,159,224,0.08);
-    border: 1px solid rgba(92,159,224,0.2);
-    color: var(--accent4);
-  }
-
-  .tag-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: currentColor;
-  }
-
-  .tag-hot .tag-dot {
-    animation: blink 1s ease-in-out infinite;
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.2; }
-  }
-
-  .catalyst-desc {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.6;
-    margin-bottom: 16px;
-  }
-
-  .catalyst-desc strong {
-    color: var(--text);
-    font-weight: 600;
-  }
-
+  .tag-hot { background: rgba(229,92,92,0.1); border: 1px solid rgba(229,92,92,0.3); color: #e05c5c; }
+  .tag-near { background: rgba(245,166,35,0.1); border: 1px solid rgba(245,166,35,0.3); color: var(--accent2); }
+  .tag-pending { background: rgba(0,229,160,0.08); border: 1px solid rgba(0,229,160,0.2); color: var(--accent); }
+  .tag-negotiating { background: rgba(92,159,224,0.08); border: 1px solid rgba(92,159,224,0.2); color: var(--accent4); }
+  .tag-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .tag-hot .tag-dot { animation: blink 1s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+  .catalyst-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+  .catalyst-desc strong { color: var(--text); font-weight: 600; }
   .card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 14px;
-    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 14px; border-top: 1px solid var(--border);
   }
-
-  .grant-amount {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--accent);
-    letter-spacing: 0.04em;
+  .grant-amount { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.04em; }
+  .analyst-target { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+  .analyst-target span { color: #a8d4b8; }
+  .risk-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .risk-label { font-family: var(--font-mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); width: 38px; flex-shrink: 0; }
+  .risk-bar-bg { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .risk-bar-fill { height: 100%; border-radius: 2px; }
+  .risk-pct { font-family: var(--font-mono); font-size: 10px; color: var(--text); width: 34px; text-align: right; flex-shrink: 0; }
+  .loading-overlay {
+    position: fixed; inset: 0; background: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 100; transition: opacity 0.4s;
   }
-
-  .analyst-target {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.03em;
+  .loading-inner { text-align: center; }
+  .loading-spinner {
+    width: 36px; height: 36px; border: 2px solid var(--border);
+    border-top-color: var(--accent); border-radius: 50%;
+    animation: spin 0.8s linear infinite; margin: 0 auto 16px;
   }
-
-  .analyst-target span {
-    color: #a8d4b8;
-  }
-
-  /* Risk meter */
-  .risk-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 14px;
-  }
-
-  .risk-label {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    width: 38px;
-    flex-shrink: 0;
-  }
-
-  .risk-bar-bg {
-    flex: 1;
-    height: 4px;
-    background: var(--border);
-    border-radius: 2px;
-    overflow: hidden;
-  }
-
-  .risk-bar-fill {
-    height: 100%;
-    border-radius: 2px;
-    transition: width 0.8s ease;
-  }
-
-  .risk-pct {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--text);
-    width: 34px;
-    text-align: right;
-    flex-shrink: 0;
-  }
-
-  /* Disclaimer */
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-text { font-family: var(--font-mono); font-size: 12px; color: var(--muted); letter-spacing: 0.1em; }
   .disclaimer {
-    position: relative;
-    z-index: 10;
-    margin: 0 48px 48px;
-    padding: 16px 20px;
-    border: 1px solid rgba(245,166,35,0.25);
-    border-radius: 6px;
-    background: rgba(245,166,35,0.04);
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--muted);
-    line-height: 1.7;
-    letter-spacing: 0.02em;
+    position: relative; z-index: 10; margin: 0 48px 48px;
+    padding: 16px 20px; border: 1px solid rgba(245,166,35,0.25);
+    border-radius: 6px; background: rgba(245,166,35,0.04);
+    font-family: var(--font-mono); font-size: 10px;
+    color: var(--muted); line-height: 1.7; letter-spacing: 0.02em;
   }
-
-  .disclaimer strong {
-    color: var(--accent2);
-  }
-
-  /* Hidden cards */
+  .disclaimer strong { color: var(--accent2); }
   .card.hidden { display: none; }
-
   @media (max-width: 680px) {
     header, .controls, .legend, .main { padding-left: 20px; padding-right: 20px; }
     .disclaimer { margin-left: 20px; margin-right: 20px; }
@@ -437,6 +205,13 @@
 </head>
 <body>
 
+<div class="loading-overlay" id="loader">
+  <div class="loading-inner">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading latest prices...</div>
+  </div>
+</div>
+
 <header>
   <div class="brand">
     <div class="logo-dot"></div>
@@ -445,7 +220,10 @@
       <div class="tagline">U.S. Government Grant & FDA Catalyst Tracker</div>
     </div>
   </div>
-  <div class="date-badge">As of March 6, 2026</div>
+  <div class="header-right">
+    <div class="date-badge" id="today-date">Loading...</div>
+    <div class="update-time" id="update-time">Prices updated: —</div>
+  </div>
 </header>
 
 <div class="controls">
@@ -457,349 +235,226 @@
 </div>
 
 <div class="legend">
-  <div class="legend-item"><div class="legend-dot" style="background:#e05c5c; box-shadow:0 0 6px #e05c5c;"></div> Imminent (≤30 days)</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#f5a623;"></div> Near-Term (1–3 months)</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#00e5a0;"></div> Pending / Finalized</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#5c9fe0;"></div> In Negotiation</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#e05c5c;box-shadow:0 0 6px #e05c5c"></div> Imminent (≤30 days)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f5a623"></div> Near-Term (1–3 months)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#00e5a0"></div> Pending / Finalized</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#5c9fe0"></div> In Negotiation</div>
 </div>
 
-<div class="main">
-
-  <!-- SEMICONDUCTORS -->
-  <div class="sector-label" data-sector="chips">Semiconductors — CHIPS Act</div>
-  <div class="cards-grid">
-
-    <div class="card sector-chips" data-sector="chips">
-      <div class="card-header">
-        <div class="ticker-block">
-          <div class="ticker">INTC</div>
-          <div class="company-name">Intel Corporation</div>
-        </div>
-        <div class="price-block">
-          <div class="price">$45.95</div>
-          <div class="price-range">52w: $17.67 – $54.60</div>
-        </div>
-      </div>
-      <div class="catalyst-tag tag-pending"><span class="tag-dot"></span>Finalized</div>
-      <div class="catalyst-desc">
-        Finalized <strong>$7.86B CHIPS Act award</strong> across four U.S. fabs in AZ, NM, OH, and OR. Also holds a separate <strong>$3B "Secure Enclave" DoD contract</strong> for classified chip production. Trump admin is renegotiating terms — outcome could be a catalyst in either direction.
-      </div>
-      <div class="risk-row">
-        <div class="risk-label">Upside</div>
-        <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:55%; background: linear-gradient(90deg, #5c9fe0, #00e5a0);"></div></div>
-        <div class="risk-pct">Mod</div>
-      </div>
-      <div class="card-footer">
-        <div class="grant-amount">Grant: $7.86B + $3B DoD</div>
-        <div class="analyst-target">Target: <span>$47.11</span></div>
-      </div>
-    </div>
-
-    <div class="card sector-chips" data-sector="chips">
-      <div class="card-header">
-        <div class="ticker-block">
-          <div class="ticker">MU</div>
-          <div class="company-name">Micron Technology</div>
-        </div>
-        <div class="price-block">
-          <div class="price">$397.05</div>
-          <div class="price-range">52w: $61.54 – $455.50</div>
-        </div>
-      </div>
-      <div class="catalyst-tag tag-near"><span class="tag-dot"></span>Near-Term</div>
-      <div class="catalyst-desc">
-        Signed PMT for up to <strong>$275M in CHIPS Act funding</strong> to modernize its Manassas, VA facility ($2B total capex). Earnings on <strong>Mar 18, 2026</strong> could be a major catalyst — HBM4 shipping early and 2026 supply reportedly sold out.
-      </div>
-      <div class="risk-row">
-        <div class="risk-label">Upside</div>
-        <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:70%; background: linear-gradient(90deg, #f5a623, #00e5a0);"></div></div>
-        <div class="risk-pct">High</div>
-      </div>
-      <div class="card-footer">
-        <div class="grant-amount">Grant: up to $275M</div>
-        <div class="analyst-target">Target: <span>$650 (Aletheia)</span></div>
-      </div>
-    </div>
-
-    <div class="card sector-chips" data-sector="chips">
-      <div class="card-header">
-        <div class="ticker-block">
-          <div class="ticker">GFS</div>
-          <div class="company-name">GlobalFoundries</div>
-        </div>
-        <div class="price-block">
-          <div class="price">$47.41</div>
-          <div class="price-range">52w: $29.77 – $50.98</div>
-        </div>
-      </div>
-      <div class="catalyst-tag tag-pending"><span class="tag-dot"></span>Finalized</div>
-      <div class="catalyst-desc">
-        Officially awarded <strong>$1.5B in CHIPS Act funding</strong> for three projects in Malta NY and Burlington VT. Stock +13% after strong Q4 2025. Investor Day on <strong>May 7, 2026</strong>. Silicon photonics revenue expected to double in 2026.
-      </div>
-      <div class="risk-row">
-        <div class="risk-label">Upside</div>
-        <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:62%; background: linear-gradient(90deg, #5c9fe0, #00e5a0);"></div></div>
-        <div class="risk-pct">Mod+</div>
-      </div>
-      <div class="card-footer">
-        <div class="grant-amount">Grant: $1.5B</div>
-        <div class="analyst-target">Target: <span>$50 (UBS, Wedbush)</span></div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- BIOTECH / FDA -->
-  <div class="sector-label" data-sector="biotech">Biotech / Pharma — Pending FDA Decisions</div>
-  <div class="cards-grid">
-
-    <div class="card sector-biotech" data-sector="biotech">
-      <div class="card-header">
-        <div class="ticker-block">
-          <div class="ticker">LNTH</div>
-          <div class="company-name">Lantheus Holdings</div>
-        </div>
-        <div class="price-block">
-          <div class="price">$62.59</div>
-          <div class="price-range">52w: $47.25 – $111.29</div>
-        </div>
-      </div>
-      <div class="catalyst-tag tag-hot"><span class="tag-dot"></span>TODAY — Mar 6</div>
-      <div class="catalyst-desc">
-        <strong>FDA PDUFA date is TODAY</strong> for a new formulation of its piflufolastat F 18 PET imaging agent for prostate cancer. Also received tentative FDA approval for PNT2003 (Lu-177 Dotatate) on Mar 2 — full approval expected June 2026. Down ~60% from ATH — contrarian setup.
-      </div>
-      <div class="risk-row">
-        <div class="risk-label">Appr.</div>
-        <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:75%; background: linear-gradient(90deg, #f5a623, #00e5a0);"></div></div>
-        <div class="risk-pct">75%</div>
-      </div>
-      <div class="card-footer">
-        <div class="grant-amount">Multiple FDA catalysts in 2026</div>
-        <div class="analyst-target">Target: <span>$89 (Truist, Jefferies)</span></div>
-      </div>
-    </div>
-
-    <div class="card sector-biotech" data-sector="biotech">
-      <div class="card-header">
-        <div class="ticker-block">
-          <div class="ticker">BMY</div>
-          <div class="company-name">Bristol Myers Squibb</div>
-        </div>
-        <div class="price-block">
-          <div class="price">$62.33</div>
-          <div class="price-range">52w: $42.52 – $63.33</div>
-        </div>
-      </div>
-      <div class="catalyst-tag tag-hot"><span class="tag-dot"></span>TODAY — Mar 6</div>
-      <div class="catalyst-desc">
-        <strong>FDA PDUFA date TODAY</strong> for deucravacitinib in ulcerative colitis — 86.5% AI-estimated approval probability. Phase 2 data met primary endpoints. Also has NDA accepted for iberdomide in relapsed multiple myeloma. Q4 beat estimates; near 52-week high.
-      </div>
-      <div class="risk-row">
-        <div class="risk-label">Appr.</div>
-        <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:87%; background: linear-gradient(90deg, #00e5a0, #00e5a0);"></div></div>
-        <div class="risk-pct">87%</div>
-      </div>
-      <div class="card-footer">
-        <div class="grant-amount">New indication if approved</div>
-        <div class="analyst-target">Target: <span>$68–$72 (BofA, Guggenheim)</span></div>
-      </div>
-    </div>
-
-    <div class="card sector-biotech" data-sector="biotech">
-      <div class="card-header">
-        <div class="ticker-block">
-          <div class="ticker">RCKT</div>
-          <div class="company-name">Rocket Pharmaceuticals</div>
-        </div>
-        <div class="price-block">
-          <div class="price">$4.97</div>
-          <div class="price-range">52w: $2.19 – $9.35</div>
-        </div>
-      </div>
-      <div class="catalyst-tag tag-hot"><span class="tag-dot"></span>PDUFA Mar 28</div>
-      <div class="catalyst-desc">
-        PDUFA for <strong>Kresladi (gene therapy for LAD-I)</strong> on March 28 — rare immune disorder with 100% OS in Phase 1/2. Stock at <strong>$4.97 vs. analyst avg. target of $8.20</strong> (+65% implied upside). Deeply discounted small-cap biotech with binary catalyst in 22 days.
-      </div>
-      <div class="risk-row">
-        <div class="risk-label">Appr.</div>
-        <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:80%; background: linear-gradient(90deg, #f5a623, #00e5a0);"></div></div>
-        <div class="risk-pct">~80%</div>
-      </div>
-      <div class="card-footer">
-        <div class="grant-amount">Rare disease / orphan designation</div>
-        <div class="analyst-target">Target: <span>$8.20 avg / $16 high</span></div>
-      </div>
-    </div>
-
-    <div class="card sector-biotech" data-sector="biotech">
-      <div class="card-header">
-        <div class="ticker-block">
-          <div class="ticker">LLY</div>
-          <div class="company-name">Eli Lilly & Co.</div>
-        </div>
-        <div class="price-block">
-          <div class="price">$1,003.57</div>
-          <div class="price-range">52w: $623.78 – $1,133.95</div>
-        </div>
-      </div>
-      <div class="catalyst-tag tag-near"><span class="tag-dot"></span>PDUFA Mar 25</div>
-      <div class="catalyst-desc">
-        PDUFA for <strong>orforglipron</strong> (oral GLP-1 for Type 2 Diabetes) on Mar 25 — 82% approval probability. If approved, Lilly plans Q2 2026 launch targeting a blockbuster franchise. Medicare obesity coverage expected mid-2026. Down ~11% from ATH — potential entry point.
-      </div>
-      <div class="risk-row">
-        <div class="risk-label">Appr.</div>
-        <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:82%; background: linear-gradient(90deg, #f5a623, #00e5a0);"></div></div>
-        <div class="risk-pct">82%</div>
-      </div>
-      <div class="card-footer">
-        <div class="grant-amount">Oral GLP-1 — potential blockbuster</div>
-        <div class="analyst-target">Target: <span>$1,255 avg / $1,500 high</span></div>
-      </div>
-    </div>
-
-    <div class="card sector-biotech" data-sector="biotech">
-      <div class="card-header">
-        <div class="ticker-block">
-          <div class="ticker">REGN</div>
-          <div class="company-name">Regeneron Pharmaceuticals</div>
-        </div>
-        <div class="price-block">
-          <div class="price">~$830–$860</div>
-          <div class="price-range">PDUFA: Feb 28 (pending result)</div>
-        </div>
-      </div>
-      <div class="catalyst-tag tag-near"><span class="tag-dot"></span>Near-Term</div>
-      <div class="catalyst-desc">
-        PDUFA for <strong>Dupixent (dupilumab)</strong> in allergic fungal rhinosinusitis — 78.9% approval probability. Expanding the Dupixent franchise (already a $10B+ product) into a new inflammatory indication. Strategic upside if approved with clean label.
-      </div>
-      <div class="risk-row">
-        <div class="risk-label">Appr.</div>
-        <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:79%; background: linear-gradient(90deg, #f5a623, #00e5a0);"></div></div>
-        <div class="risk-pct">79%</div>
-      </div>
-      <div class="card-footer">
-        <div class="grant-amount">Dupixent franchise expansion</div>
-        <div class="analyst-target">Target: <span>Strong analyst coverage</span></div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- CRITICAL MINERALS -->
-  <div class="sector-label" data-sector="minerals">Critical Minerals & Clean Energy</div>
-  <div class="cards-grid">
-
-    <div class="card sector-minerals" data-sector="minerals">
-      <div class="card-header">
-        <div class="ticker-block">
-          <div class="ticker">ALB</div>
-          <div class="company-name">Albemarle Corporation</div>
-        </div>
-        <div class="price-block">
-          <div class="price">$168.35</div>
-          <div class="price-range">52w: $49.43 – $206.00</div>
-        </div>
-      </div>
-      <div class="catalyst-tag tag-pending"><span class="tag-dot"></span>Multiple Awards</div>
-      <div class="catalyst-desc">
-        Holds <strong>$67.1M DOE battery grant</strong>, <strong>$90M Defense Production Act award</strong>, and <strong>$150M DOE grant</strong> tied to its Kings Mountain NC lithium facility. Trump's critical mineral reserve push is a tailwind. Stock is well off its $206 high — deeply discounted.
-      </div>
-      <div class="risk-row">
-        <div class="risk-label">Upside</div>
-        <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:65%; background: linear-gradient(90deg, #f5a623, #00e5a0);"></div></div>
-        <div class="risk-pct">Mod+</div>
-      </div>
-      <div class="card-footer">
-        <div class="grant-amount">Grants: $307M+ combined</div>
-        <div class="analyst-target">Target: <span>$188 avg / $230 high</span></div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- DEFENSE / AI -->
-  <div class="sector-label" data-sector="defense">Defense Tech & AI — FY2026 NDAA Beneficiaries</div>
-  <div class="cards-grid">
-
-    <div class="card sector-defense" data-sector="defense">
-      <div class="card-header">
-        <div class="ticker-block">
-          <div class="ticker">PLTR</div>
-          <div class="company-name">Palantir Technologies</div>
-        </div>
-        <div class="price-block">
-          <div class="price">$152.67</div>
-          <div class="price-range">52w: $66.12 – $207.52</div>
-        </div>
-      </div>
-      <div class="catalyst-tag tag-pending"><span class="tag-dot"></span>Active Contracts</div>
-      <div class="catalyst-desc">
-        Army awarded Palantir an <strong>enterprise AI agreement worth up to $10B</strong> consolidating 75 prior awards. The <strong>Maven Smart System</strong> (DoD AI mission control) is licensed to the Army. FY2026 NDAA AI-first agenda directly benefits Palantir's government segment. 2026 revenue guided at 61% growth.
-      </div>
-      <div class="risk-row">
-        <div class="risk-label">Upside</div>
-        <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:58%; background: linear-gradient(90deg, #e05c5c, #f5a623);"></div></div>
-        <div class="risk-pct">Mod</div>
-      </div>
-      <div class="card-footer">
-        <div class="grant-amount">DoD AI contract: up to $10B</div>
-        <div class="analyst-target">Target: <span>$192 avg (MarketBeat)</span></div>
-      </div>
-    </div>
-
-    <div class="card sector-defense" data-sector="defense">
-      <div class="card-header">
-        <div class="ticker-block">
-          <div class="ticker">INTC</div>
-          <div class="company-name">Intel — Secure Enclave</div>
-        </div>
-        <div class="price-block">
-          <div class="price">$45.95</div>
-          <div class="price-range">$3B DoD Contract</div>
-        </div>
-      </div>
-      <div class="catalyst-tag tag-negotiating"><span class="tag-dot"></span>In Renegotiation</div>
-      <div class="catalyst-desc">
-        <strong>$3B DoD "Secure Enclave" contract</strong> for classified advanced chip production for national security. Trump admin is renegotiating all CHIPS Act awards — Intel 18A foundry tech now being opened to external clients, which could be a new revenue stream. Watch Q1 earnings Apr 23.
-      </div>
-      <div class="risk-row">
-        <div class="risk-label">Upside</div>
-        <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:52%; background: linear-gradient(90deg, #5c9fe0, #5c9fe0);"></div></div>
-        <div class="risk-pct">Specul.</div>
-      </div>
-      <div class="card-footer">
-        <div class="grant-amount">DoD: $3B secured</div>
-        <div class="analyst-target">Target: <span>$47.11 avg / $71.50 high</span></div>
-      </div>
-    </div>
-
-  </div>
-
+<div class="main" id="main-content">
+  <!-- Cards injected by JS -->
 </div>
 
 <div class="disclaimer">
-  <strong>⚠ NOT FINANCIAL ADVICE.</strong> This tracker is for informational purposes only. All stock prices are approximate as of market close March 5–6, 2026 and may differ from real-time values. Government grant negotiations, FDA approvals, and defense contracts are subject to change, cancellation, or renegotiation. Approval probabilities are sourced from third-party AI models and do not guarantee FDA outcomes. Biotech stocks involve high binary risk — a rejection can cause 50–80% declines in a single day. Consult a licensed financial advisor before making any investment decisions. Past performance does not guarantee future results.
+  <strong>⚠ NOT FINANCIAL ADVICE.</strong> This tracker is for informational purposes only. Stock prices are pulled automatically from Yahoo Finance after market close each weekday and may lag real-time values. Government grant negotiations, FDA approvals, and defense contracts are subject to change, cancellation, or renegotiation. Approval probabilities are sourced from third-party AI models and do not guarantee FDA outcomes. Biotech stocks involve high binary risk — a rejection can cause 50–80% declines in a single day. Consult a licensed financial advisor before making any investment decisions.
 </div>
 
 <script>
+// ── Static catalyst data (prices injected from prices.json) ──────────────────
+const CATALOG = [
+  {
+    ticker: "INTC", sector: "chips", sectorLabel: "Semiconductors — CHIPS Act",
+    tag: "tag-pending", tagText: "Finalized",
+    desc: `Finalized <strong>$7.86B CHIPS Act award</strong> across four U.S. fabs (AZ, NM, OH, OR). Holds a separate <strong>$3B "Secure Enclave" DoD contract</strong> for classified chip production. Trump admin renegotiating all CHIPS terms — Q1 earnings Apr 23 is the next catalyst.`,
+    grant: "Grant: $7.86B + $3B DoD", target: "$47.11 avg / $71.50 high",
+    approval: null, approvalLabel: "Upside", approvalPct: 55,
+  },
+  {
+    ticker: "MU", sector: "chips", sectorLabel: null,
+    tag: "tag-near", tagText: "Near-Term",
+    desc: `Signed PMT for up to <strong>$275M in CHIPS Act funding</strong> for Manassas VA fab. <strong>Earnings Mar 18, 2026</strong> is a major catalyst — HBM4 shipping early, 2026 supply reportedly sold out. AI memory demand is surging.`,
+    grant: "Grant: up to $275M", target: "$650 (Aletheia)",
+    approval: null, approvalLabel: "Upside", approvalPct: 70,
+  },
+  {
+    ticker: "GFS", sector: "chips", sectorLabel: null,
+    tag: "tag-pending", tagText: "Finalized",
+    desc: `Officially awarded <strong>$1.5B in CHIPS Act funding</strong> for Malta NY and Burlington VT fabs. Investor Day <strong>May 7, 2026</strong>. Silicon photonics revenue expected to double this year. Stock +13% after strong Q4 2025.`,
+    grant: "Grant: $1.5B", target: "$50 (UBS, Wedbush)",
+    approval: null, approvalLabel: "Upside", approvalPct: 62,
+  },
+  {
+    ticker: "LNTH", sector: "biotech", sectorLabel: "Biotech / Pharma — FDA Catalysts",
+    tag: "tag-hot", tagText: "FDA Mar 6",
+    desc: `<strong>FDA PDUFA date Mar 6</strong> for piflufolastat F18 PET imaging (prostate cancer). Tentative approval for PNT2003 on Mar 2 — full approval expected June 2026. Down ~60% from ATH — multiple near-term triggers with contrarian value setup.`,
+    grant: "Multiple 2026 FDA catalysts", target: "$89 (Truist, Jefferies)",
+    approval: 75, approvalLabel: "Approval", approvalPct: 75,
+  },
+  {
+    ticker: "BMY", sector: "biotech", sectorLabel: null,
+    tag: "tag-hot", tagText: "FDA Mar 6",
+    desc: `<strong>FDA PDUFA Mar 6</strong> for deucravacitinib in ulcerative colitis — 86.5% AI-estimated approval odds. Phase 2 data met primary endpoints. Also has iberdomide NDA accepted for relapsed multiple myeloma. Q4 beat estimates; trading near 52-week high.`,
+    grant: "New indication expansion", target: "$68–$72 (BofA, Guggenheim)",
+    approval: 87, approvalLabel: "Approval", approvalPct: 87,
+  },
+  {
+    ticker: "RCKT", sector: "biotech", sectorLabel: null,
+    tag: "tag-hot", tagText: "PDUFA Mar 28",
+    desc: `PDUFA for <strong>Kresladi gene therapy (LAD-I)</strong> on March 28. Rare immune disorder; 100% OS in Phase 1/2. Small-cap deeply off highs with 65%+ implied upside to consensus target. Classic high-risk / high-reward binary catalyst in weeks.`,
+    grant: "Rare disease / orphan designation", target: "$8.20 avg / $16 high",
+    approval: 80, approvalLabel: "Approval", approvalPct: 80,
+  },
+  {
+    ticker: "LLY", sector: "biotech", sectorLabel: null,
+    tag: "tag-near", tagText: "PDUFA Mar 25",
+    desc: `PDUFA for <strong>orforglipron</strong> (oral GLP-1, Type 2 Diabetes) Mar 25 — 82% approval probability. Lilly targeting Q2 2026 launch with blockbuster potential. Medicare obesity coverage expected mid-2026. Down ~11% from ATH — potential discounted entry.`,
+    grant: "Oral GLP-1 franchise", target: "$1,255 avg / $1,500 high",
+    approval: 82, approvalLabel: "Approval", approvalPct: 82,
+  },
+  {
+    ticker: "REGN", sector: "biotech", sectorLabel: null,
+    tag: "tag-near", tagText: "PDUFA Feb 28",
+    desc: `PDUFA for <strong>Dupixent (dupilumab)</strong> in allergic fungal rhinosinusitis — 78.9% estimated approval odds. Expanding the $10B+ Dupixent franchise into a new inflammatory indication. Strategic upside with clean label expansion.`,
+    grant: "Dupixent franchise expansion", target: "Strong analyst consensus",
+    approval: 79, approvalLabel: "Approval", approvalPct: 79,
+  },
+  {
+    ticker: "ALB", sector: "minerals", sectorLabel: "Critical Minerals & Clean Energy",
+    tag: "tag-pending", tagText: "Multiple Awards",
+    desc: `Holds <strong>$67.1M DOE battery grant</strong>, <strong>$90M Defense Production Act award</strong>, and <strong>$150M DOE grant</strong> for Kings Mountain NC lithium facility. Trump's critical mineral reserve executive order is a direct tailwind. Down significantly from ATH — deep value setup.`,
+    grant: "Grants: $307M+ combined", target: "$188 avg / $230 high",
+    approval: null, approvalLabel: "Upside", approvalPct: 65,
+  },
+  {
+    ticker: "PLTR", sector: "defense", sectorLabel: "Defense Tech & AI",
+    tag: "tag-pending", tagText: "Active Contracts",
+    desc: `Army awarded <strong>enterprise AI contract up to $10B</strong>, consolidating 75 prior awards. Maven Smart System (DoD AI mission control) licensed to the Army. FY2026 NDAA AI-first agenda directly benefits government segment. 2026 revenue guided at 61% growth.`,
+    grant: "DoD AI contract: up to $10B", target: "$192 avg (MarketBeat)",
+    approval: null, approvalLabel: "Upside", approvalPct: 58,
+  },
+];
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+function fmt(price) {
+  if (price >= 1000) return '$' + price.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+  return '$' + price.toFixed(2);
+}
+
+function positionPct(price, low, high) {
+  if (high === low) return 50;
+  return Math.min(100, Math.max(0, ((price - low) / (high - low)) * 100));
+}
+
+function changeClass(c) {
+  if (c > 0) return 'up';
+  if (c < 0) return 'down';
+  return 'flat';
+}
+
+function changeStr(c, pct) {
+  const sign = c >= 0 ? '+' : '';
+  return `${sign}${c.toFixed(2)} (${sign}${pct.toFixed(2)}%)`;
+}
+
+// ── Build DOM ────────────────────────────────────────────────────────────────
+function buildCards(prices) {
+  const main = document.getElementById('main-content');
+  main.innerHTML = '';
+
+  let currentSector = null;
+  let grid = null;
+
+  CATALOG.forEach(item => {
+    const p = prices[item.ticker] || {};
+
+    // Sector header
+    if (item.sectorLabel) {
+      const label = document.createElement('div');
+      label.className = 'sector-label';
+      label.dataset.sector = item.sector;
+      label.textContent = item.sectorLabel;
+      main.appendChild(label);
+      grid = document.createElement('div');
+      grid.className = 'cards-grid';
+      main.appendChild(grid);
+      currentSector = item.sector;
+    }
+
+    const price = p.price || 0;
+    const change = p.change || 0;
+    const changePct = p.change_pct || 0;
+    const low = p.week52_low || 0;
+    const high = p.week52_high || 0;
+    const posPct = positionPct(price, low, high);
+
+    const barColor = item.approvalPct >= 80
+      ? 'linear-gradient(90deg, #00e5a0, #00e5a0)'
+      : item.approvalPct >= 60
+        ? 'linear-gradient(90deg, #f5a623, #00e5a0)'
+        : 'linear-gradient(90deg, #e05c5c, #f5a623)';
+
+    const card = document.createElement('div');
+    card.className = `card sector-${item.sector}`;
+    card.dataset.sector = item.sector;
+    card.innerHTML = `
+      <div class="card-header">
+        <div class="ticker-block">
+          <div class="ticker">${item.ticker}</div>
+          <div class="company-name">${p.company || item.ticker}</div>
+        </div>
+        <div class="price-block">
+          <div class="price">${price ? fmt(price) : '—'}</div>
+          <div class="price-change ${changeClass(change)}">${price ? changeStr(change, changePct) : ''}</div>
+          <div class="week52">${low && high ? `52w: ${fmt(low)} – ${fmt(high)}` : ''}</div>
+        </div>
+      </div>
+      ${low && high ? `
+      <div class="position-bar-wrap">
+        <div class="position-bar-label">52-week position</div>
+        <div class="position-bar-track">
+          <div class="position-bar-fill" style="width:100%"></div>
+          <div class="position-marker" style="left:${posPct}%"></div>
+        </div>
+      </div>` : ''}
+      <div class="catalyst-tag ${item.tag}"><span class="tag-dot"></span>${item.tagText}</div>
+      <div class="catalyst-desc">${item.desc}</div>
+      <div class="risk-row">
+        <div class="risk-label">${item.approvalLabel}</div>
+        <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:${item.approvalPct}%; background:${barColor}"></div></div>
+        <div class="risk-pct">${item.approval ? item.approval + '%' : item.approvalPct > 65 ? 'Mod+' : 'Mod'}</div>
+      </div>
+      <div class="card-footer">
+        <div class="grant-amount">${item.grant}</div>
+        <div class="analyst-target">Target: <span>${item.target}</span></div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
 function filter(sector, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.card').forEach(card => {
-    if (sector === 'all' || card.dataset.sector === sector) {
-      card.classList.remove('hidden');
-    } else {
-      card.classList.add('hidden');
-    }
+  document.querySelectorAll('.card').forEach(c => {
+    c.classList.toggle('hidden', sector !== 'all' && c.dataset.sector !== sector);
   });
-  document.querySelectorAll('.sector-label').forEach(label => {
-    const sec = label.dataset.sector;
-    const visibleCards = document.querySelectorAll(`.card[data-sector="${sec}"]:not(.hidden)`);
-    label.style.display = (sector === 'all' || sector === sec) ? '' : 'none';
-    if (sector === 'all' || sector === sec) label.style.display = '';
-    else label.style.display = 'none';
+  document.querySelectorAll('.sector-label').forEach(l => {
+    l.style.display = (sector === 'all' || l.dataset.sector === sector) ? '' : 'none';
   });
 }
+
+// ── Load prices.json ─────────────────────────────────────────────────────────
+async function init() {
+  const today = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  document.getElementById('today-date').textContent = today;
+
+  try {
+    const res = await fetch('prices.json?v=' + Date.now());
+    const data = await res.json();
+    buildCards(data.prices || {});
+    document.getElementById('update-time').textContent = 'Prices updated: ' + (data.updated || '—');
+  } catch (e) {
+    console.warn('Could not load prices.json, using fallback.', e);
+    buildCards({});
+    document.getElementById('update-time').textContent = 'Price data unavailable';
+  }
+
+  const loader = document.getElementById('loader');
+  loader.style.opacity = '0';
+  setTimeout(() => loader.style.display = 'none', 400);
+}
+
+init();
 </script>
 </body>
 </html>

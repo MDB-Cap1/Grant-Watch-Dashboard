@@ -1,0 +1,15 @@
+{
+  "updated": "2026-03-06 20:00 UTC",
+  "prices": {
+    "INTC": { "price": 45.95, "change": 0.52, "change_pct": 1.14, "week52_low": 17.67, "week52_high": 54.60, "company": "Intel Corporation", "sector": "chips" },
+    "MU":   { "price": 97.05, "change": -1.20, "change_pct": -1.22, "week52_low": 61.54, "week52_high": 145.50, "company": "Micron Technology", "sector": "chips" },
+    "GFS":  { "price": 47.41, "change": 0.33, "change_pct": 0.70, "week52_low": 29.77, "week52_high": 50.98, "company": "GlobalFoundries", "sector": "chips" },
+    "LNTH": { "price": 62.59, "change": -0.88, "change_pct": -1.39, "week52_low": 47.25, "week52_high": 111.29, "company": "Lantheus Holdings", "sector": "biotech" },
+    "BMY":  { "price": 62.33, "change": 0.71, "change_pct": 1.15, "week52_low": 42.52, "week52_high": 63.33, "company": "Bristol Myers Squibb", "sector": "biotech" },
+    "RCKT": { "price": 4.97,  "change": 0.12, "change_pct": 2.47, "week52_low": 2.19, "week52_high": 9.35, "company": "Rocket Pharmaceuticals", "sector": "biotech" },
+    "LLY":  { "price": 1003.57, "change": -8.43, "change_pct": -0.83, "week52_low": 623.78, "week52_high": 1133.95, "company": "Eli Lilly & Co.", "sector": "biotech" },
+    "REGN": { "price": 845.20, "change": 3.10, "change_pct": 0.37, "week52_low": 644.35, "week52_high": 1211.18, "company": "Regeneron Pharmaceuticals", "sector": "biotech" },
+    "ALB":  { "price": 68.35, "change": -0.95, "change_pct": -1.37, "week52_low": 49.43, "week52_high": 106.00, "company": "Albemarle Corporation", "sector": "minerals" },
+    "PLTR": { "price": 82.67, "change": 1.24, "change_pct": 1.52, "week52_low": 16.12, "week52_high": 125.41, "company": "Palantir Technologies", "sector": "defense" }
+  }
+}
